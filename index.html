@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مياه باريس | النقاء الفرنسي الفاخر</title>
+    <meta name="description" content="مياه باريس - النقاء بين يديك. تجربة خيالية تعكس الفخامة.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;800;900&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- شاشة تحميل -->
+    <div id="water-loader" class="water-loader">
+        <div class="loader-drop-container">
+            <div class="falling-drop"></div>
+            <div class="loader-ripple"></div>
+        </div>
+        <h2 class="loader-text">مياه باريس</h2>
+    </div>
+
+    <div id="canvas-water-bg" class="water-canvas"></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <i class="fa-solid fa-droplet logo-icon"></i>
+                <span class="logo-text">باريس<span class="glow-dot">.</span></span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#products">أصداراتنا</a></li>
+                <li><a href="#about">رحلتنا</a></li>
+                <li><a href="#gallery">معرض المياه</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+            <div class="menu-toggle">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title reveal">
+                انسياب<br>
+                <span class="text-glow animate-gradient">الحيــــاة</span>
+            </h1>
+            <p class="hero-subtitle reveal" style="transition-delay: 0.2s;">
+                تصلك من أعماق الينابيع، محفوفة بسحر الطبيعة. قطرات صافية تتلألأ كالكريستال لتروي عطشك بفخامة مطلقة، من مياه باريس.
+            </p>
+            <div class="hero-cta reveal" style="transition-delay: 0.4s;">
+                <a href="#about" class="btn btn-outline premium-btn">
+                    <span>اكتشف القصة</span>
+                    <i class="fa-solid fa-chevron-left arrow-icon"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="bottle-showcase-wrapper" id="scene-3d">
+            <div class="bottle-container">
+                <div class="bottle-glow layer" data-depth="0.1"></div>
+                
+                <!-- الزجاجة الرئيسية الفاخرة (تصميم Voss الأسطواني) خالص بـ CSS -->
+                <div class="layer css-bottle-container animate-float" data-depth="0.8">
+                    <div class="css-bottle hero-bottle">
+                        <div class="hero-cap"></div>
+                        <div class="hero-body">
+                            <div class="hero-label">PARIS<br><span>PREMIUM</span></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-bubble layer drop-1" data-depth="1.5"></div>
+                <div class="glass-bubble layer drop-2" data-depth="2.2"></div>
+                <div class="glass-bubble layer drop-3" data-depth="3.0"></div>
+                <div class="glass-bubble layer drop-4" data-depth="4.0"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم تشكيلات المصنع (تعريفي فقط) -->
+    <section id="products" class="products-section">
+        <div class="section-header reveal">
+            <h2 class="section-title">إصدارات باريس</h2>
+            <p class="section-desc">مجموعة متميزة مصممة لتناسب مختلف أوقاتك واحتياجاتك بإصدارات مختلفة هندسياً.</p>
+        </div>
+        
+        <div class="products-grid">
+            <!-- الحجم الصغير (العبوة المكتنزة) -->
+            <div class="product-card reveal" data-tilt data-tilt-max="10">
+                <div class="card-glow"></div>
+                <div class="product-img-wrapper">
+                    <div class="css-bottle-container">
+                        <div class="css-bottle pocket-bottle">
+                            <div class="pocket-cap"></div>
+                            <div class="pocket-neck"></div>
+                            <div class="pocket-body">
+                                <div class="pocket-label">PARIS<span>MINI</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>حجم الجيب (المصغر)</h3>
+                    <p class="size">تصميم كلاسيكي - 330 مل</p>
+                </div>
+            </div>
+
+            <!-- الحجم المتوسط (الرياضي ذو الغطاء الخاص) -->
+            <div class="product-card featured reveal" data-tilt data-tilt-max="10" style="transition-delay: 0.2s;">
+                <div class="card-glow featured-glow"></div>
+                <div class="badge">الأكثر شعبية</div>
+                <div class="product-img-wrapper" style="height: 280px;">
+                    <div class="css-bottle-container">
+                        <div class="css-bottle sport-bottle">
+                            <div class="sport-cap">
+                                <div class="sport-spout"></div>
+                            </div>
+                            <div class="sport-neck"></div>
+                            <div class="sport-body">
+                                <div class="sport-label">PARIS<span>ACTIVE</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>الحجم الرياضي (أكتيف)</h3>
+                    <p class="size">تصميم إيروديناميكي - 750 مل</p>
+                </div>
+            </div>
+
+            <!-- الحجم العائلي (العبوة الطويلة المضلعة) -->
+            <div class="product-card reveal" data-tilt data-tilt-max="10" style="transition-delay: 0.4s;">
+                <div class="card-glow"></div>
+                <div class="product-img-wrapper" style="height: 250px;">
+                    <div class="css-bottle-container">
+                        <div class="css-bottle family-bottle">
+                            <div class="family-cap"></div>
+                            <div class="family-neck"></div>
+                            <div class="family-body">
+                                <div class="family-ribs"></div>
+                                <div class="family-ribs"></div>
+                                <div class="family-label">PARIS<span>FAMILY</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>العبوة العائلية</h3>
+                    <p class="size">تصميم مضلع قوي - 1.5 لتر</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم رحلتنا -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-text reveal">
+                <h2 class="section-title">رحلة قطرة الماء</h2>
+                <h3 class="section-subtitle">من أعلى الجبال إلى بين يديك</h3>
+                <p>
+                    تُستخرج مياه "باريس" من ينابيع جوفية نادرة لم تمسها يد البشر. حيث تمر المياه برحلة فلترة طبيعية لتكتسب توازناً فريداً من المعادن.
+                </p>
+                <p>
+                    نحن في "مياه باريس" نؤمن بأن الماء هو الترف الحقيقي، وقدمنا تصاميم عبواتنا لتعكس أسلوب الحياة الراقي والصحي الذي تفضله.
+                </p>
+            </div>
+            <div class="about-visual reveal">
+                <div class="floating-water-card" data-tilt data-tilt-max="15">
+                    <div class="card-content">
+                        <i class="fa-solid fa-droplet card-icon animate-pulse-soft"></i>
+                        <h4>توازن مثالي</h4>
+                        <p>درجة حموضة (pH 7.4) تتناغم تماماً مع جسم الإنسان وحيويته.</p>
+                    </div>
+                    <div class="card-bg-glow"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المياه التفاعلية -->
+    <section id="gallery" class="interactive-water-section reveal">
+        <div class="water-glass-panel">
+            <h2>انسياب الطبيعة الحقيقي</h2>
+            <p>المس سطح اللوحة لترى التموجات الفيزيائية تحاكي تناغم المياه.</p>
+            <div class="wave-simulation-box" id="wave-box"></div>
+        </div>
+    </section>
+
+    <!-- تواصل معنا -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container reveal">
+            <div class="contact-info">
+                <h2 class="contact-title">احصل على نقاء باريس</h2>
+                <p>لتكوين شراكات مستقبلية، أو لتزويد أعمالكم بنقائنا، نسعد بتواصلك.</p>
+                <div class="contact-details">
+                    <div class="detail-item">
+                        <i class="fa-solid fa-envelope"></i> mohammedmojepp4063155@gmail.com
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-phone"></i> +967 772062777
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-phone"></i> +967 782807337
+                    </div>
+                    <div class="detail-item">
+                        <i class="fa-solid fa-location-dot"></i> اليمن، صنعاء - الإدارة العامة
+                    </div>
+                </div>
+            </div>
+            <div class="contact-form-wrapper">
+                <form id="contactForm" class="glass-form">
+                    <div class="input-group">
+                        <input type="text" required placeholder=" ">
+                        <label>الإسم الكريم</label>
+                        <i class="fa-solid fa-user icon"></i>
+                    </div>
+                    <div class="input-group">
+                        <input type="tel" required placeholder=" ">
+                        <label>رقم الهاتف</label>
+                        <i class="fa-solid fa-phone icon"></i>
+                    </div>
+                    <div class="input-group">
+                        <textarea required placeholder=" " rows="4"></textarea>
+                        <label>الاستفسار</label>
+                    </div>
+                    <button type="submit" class="btn btn-outline premium-btn w-100">
+                        <span>إرسال الرسالة</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fa-solid fa-droplet logo-icon"></i>
+                <span class="logo-text">مياه باريس<span class="glow-dot">.</span></span>
+                <p class="footer-desc">أيقونة المياه المعدنية الفاخرة، لتجربة ارتواء استثنائية.</p>
+            </div>
+            <div class="footer-links">
+                <h3>اكتشف القصة</h3>
+                <a href="#home">الواجهة الرئيسية</a>
+                <a href="#products">الإصدارات</a>
+                <a href="#about">القصة والأصول</a>
+            </div>
+            <div class="footer-social">
+                <h3>تواصل مجتمعنا</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 مياه باريس. صُنع بشغف لتقديم النقاء.</p>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/967772062777" target="_blank" class="whatsapp-float">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

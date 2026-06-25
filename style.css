@@ -1,0 +1,283 @@
+/* ====== المتغيرات الأساسية ذات الطابع الفاخر جداً ====== */
+:root {
+    --clr-bg-dark: #00030a;
+    --clr-bg-gradient: radial-gradient(circle at top right, #001838 0%, #000714 50%, #000205 100%);
+    --clr-primary: #8addff;
+    --clr-secondary: #0066ff;
+    --clr-accent: #00ffcc;
+    --clr-white: #ffffff;
+    --clr-text-light: #9db2c9;
+    
+    --glass-bg: rgba(255, 255, 255, 0.015);
+    --glass-border: rgba(138, 221, 255, 0.2);
+    --glass-shadow: 0 40px 80px rgba(0, 0, 0, 0.8);
+    --glass-blur: blur(25px);
+
+    --font-heading: 'Cairo', sans-serif;
+    --font-body: 'Tajawal', sans-serif;
+
+    --section-padding: 130px 5%;
+    --trans-smooth: 0.8s cubic-bezier(0.1, 1, 0.2, 1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+    font-family: var(--font-body);
+    background: var(--clr-bg-dark);
+    color: var(--clr-white);
+    overflow-x: hidden;
+    direction: rtl;
+    line-height: 1.8;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--clr-bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--clr-primary); border-radius: 10px; }
+::selection { background: var(--clr-primary); color: var(--clr-bg-dark); }
+
+h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 300; }
+.text-glow {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--clr-primary);
+    position: relative;
+}
+
+.animate-gradient {
+    background: linear-gradient(to right, #8addff, #ffffff, #00ffcc, #8addff);
+    background-size: 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s linear infinite;
+    text-shadow: 0 0 40px rgba(138, 221, 255, 0.5);
+    -webkit-text-stroke: 0px; 
+    font-weight: 900;
+}
+@keyframes shine { 0% { background-position: 0% 50%; } 100% { background-position: 300% 50%; } }
+.glow-dot { color: var(--clr-primary); text-shadow: 0 0 10px var(--clr-primary); }
+
+.premium-btn {
+    position: relative; overflow: hidden; background: rgba(138, 221, 255, 0.05); border: 1px solid rgba(138, 221, 255, 0.3); backdrop-filter: blur(5px);
+}
+.premium-btn span { position: relative; z-index: 2; transition: 0.3s; }
+.premium-btn i { position: relative; z-index: 2; color: var(--clr-primary); }
+.premium-btn::before {
+    content: ''; position: absolute; top: 50%; left: 50%; width: 150%; height: 150%;
+    background: radial-gradient(circle, rgba(138, 221, 255, 0.4) 0%, transparent 60%);
+    transform: translate(-50%, -50%) scale(0); transition: transform 0.6s cubic-bezier(0.1, 1, 0.2, 1); z-index: 0;
+}
+.premium-btn:hover { border-color: var(--clr-white); box-shadow: 0 0 25px rgba(138, 221, 255, 0.3); }
+.premium-btn:hover::before { transform: translate(-50%, -50%) scale(1); }
+.premium-btn:hover span, .premium-btn:hover i { color: var(--clr-bg-dark); font-weight: 700; }
+
+.btn { display: inline-flex; align-items: center; gap: 15px; padding: 15px 40px; font-family: var(--font-body); font-size: 1.1rem; text-decoration: none; border-radius: 50px; cursor: pointer; transition: all 0.4s ease; border: 1px solid transparent; color: white;}
+.btn-outline { border-color: rgba(138, 221, 255, 0.3); }
+.w-100 { width: 100%; justify-content: center;}
+
+/* شريط التنقل */
+.navbar { position: fixed; top: 0; left: 0; width: 100%; padding: 30px 5%; z-index: 1000; transition: var(--trans-smooth); border-bottom: 1px solid transparent; }
+.navbar.scrolled { padding: 15px 5%; background: rgba(0, 2, 7, 0.7); backdrop-filter: blur(25px); border-bottom: 1px solid rgba(138, 221, 255, 0.1); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1400px; margin: 0 auto; }
+.logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--clr-white); font-size: 1.8rem; font-weight: 800; letter-spacing: 0px; }
+.logo-icon { color: var(--clr-primary); font-size: 1.2em; filter: drop-shadow(0 0 8px rgba(138, 221, 255, 0.6)); }
+.nav-links { display: flex; list-style: none; gap: 40px; }
+.nav-links li a { text-decoration: none; color: var(--clr-text-light); font-size: 1.1rem; font-weight: 500; transition: 0.3s; position: relative;}
+.nav-links li a:hover { color: var(--clr-white); text-shadow: 0 0 15px var(--clr-primary); }
+.menu-toggle { display: none; font-size: 1.5rem; cursor: pointer; }
+
+/* ======== القسم الرئيسي ======== */
+.hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 8%; position: relative; background: var(--clr-bg-gradient); overflow: hidden;
+    background-size: 250% 250%; background-position: 50% 50%;
+}
+.hero-content { max-width: 600px; z-index: 10; padding-top: 50px; position:relative;}
+.hero-title { font-size: clamp(4rem, 7vw, 7.5rem); line-height: 1.1; margin-bottom: 25px; font-weight: 800; will-change: transform;}
+.hero-subtitle { font-size: 1.3rem; color: var(--clr-text-light); margin-bottom: 45px; font-weight: 400; line-height: 1.9; }
+
+.bottle-showcase-wrapper {
+    position: absolute; top: 48%; left: 25%; transform: translate(-50%, -50%);
+    width: 300px; height: 450px; perspective: 1200px; z-index: 5; pointer-events: none;
+}
+.bottle-container { width: 100%; height: 100%; position: relative; transform-style: preserve-3d; }
+.layer { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); will-change: transform; }
+
+.animate-float { animation: slowFloat 8s ease-in-out infinite; }
+@keyframes slowFloat { 0%, 100% { margin-top: 0px; } 50% { margin-top: -15px; } }
+
+/* ======================================================= */
+/* مجموعة زجاجات (CSS فنية بالكامل ومختلفة الأشكال والمقاسات) */
+/* ======================================================= */
+
+.css-bottle-container { display: flex; justify-content: center; align-items: center; height: 100%; width: 100%; }
+.css-bottle { display: flex; flex-direction: column; align-items: center; justify-content: flex-end; filter: drop-shadow(0 20px 20px rgba(0,0,0,0.9)) drop-shadow(0 0 20px rgba(138, 221, 255, 0.2)); transition: transform var(--trans-smooth); position: relative;}
+
+/* اللمعان والزجاج الأساسي المشترك للعبوات */
+.glass-body {
+    background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.15) 20%, rgba(138, 221, 255, 0.1) 80%, rgba(255,255,255,0.02) 100%);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(138, 221, 255, 0.5); border-top: none;
+    box-shadow: inset 15px 0 30px rgba(255,255,255,0.3), inset -15px 0 30px rgba(138, 221, 255, 0.3);
+    overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;
+}
+.glass-body::before { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 90%; background: linear-gradient(0deg, rgba(0, 85, 255, 0.3), transparent); } /* ماء */
+.glass-body::after { content: ''; position: absolute; top: 10px; left: 15%; width: 10%; height: 90%; background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent); filter: blur(3px); opacity: 0.7; } /* لمعة ضوء */
+
+/* 1. الزجاجة الرئيسية (تصميم أسطواني عصري جدًا مثل Voss) */
+.hero-bottle { transform: scale(1.6); -webkit-box-reflect: below 5px linear-gradient(to bottom, rgba(0,0,0,0) 60%, rgba(0,0,0,0.3)); }
+.hero-cap { width: 55px; height: 25px; background: linear-gradient(90deg, #d3d3d3, #ffffff, #888888); border-radius: 3px 3px 0 0; z-index: 3; box-shadow: inset 0 -3px 5px rgba(0,0,0,0.3); }
+.hero-body { @extend .glass-body; width: 95px; height: 260px; border-radius: 5px 5px 15px 15px; border-top: 2px solid rgba(138, 221, 255, 0.5); }
+.hero-label { width: 100%; padding: 15px 0; background: rgba(0, 2, 5, 0.95); display: flex; flex-direction: column; align-items: center; color: var(--clr-primary); font-family: var(--font-heading); font-weight: 900; letter-spacing: 4px; box-shadow: 0 5px 20px rgba(0,0,0,0.8); z-index: 4; border: 1px solid rgba(138, 221, 255, 0.3); border-left: none; border-right: none;}
+.hero-label span { font-size: 0.6rem; color: #fff; letter-spacing: 8px; font-weight: 400;}
+
+/* 2. الزجاجة المصغرة (Pocket - قصيرة ومكتنزة كلاسيكية) */
+.pocket-bottle { transform: scale(0.95) translateY(10px); }
+.pocket-cap { width: 30px; height: 20px; background: linear-gradient(90deg, #001838, #0055ff, #001838); border-radius: 8px 8px 0 0; z-index: 3;}
+.pocket-neck { width: 35px; height: 20px; background: rgba(255,255,255,0.1); border-left: 2px solid rgba(138, 221, 255, 0.4); border-right: 2px solid rgba(138, 221, 255, 0.4); z-index: 2;}
+.pocket-body { @extend .glass-body; width: 110px; height: 160px; border-radius: 40px 40px 15px 15px; }
+.pocket-label { width: 100%; padding: 10px 0; background: rgba(0, 102, 255, 0.9); color: #fff; text-align: center; font-weight: 800; border-top: 2px solid rgba(255,255,255,0.5); z-index:4; font-family:var(--font-heading);}
+
+/* 3. الزجاجة الرياضية (مخصورة ذات غطاء رياضي) */
+.sport-bottle { transform: scale(1.15) translateY(-5px); }
+.sport-cap { width: 40px; height: 35px; background: #000; border-radius: 10px 10px 0 0; display:flex; justify-content:center; position:relative; z-index:3;}
+.sport-spout { width: 15px; height: 15px; background: #00ffcc; border-radius: 5px 5px 0 0; position: absolute; top: -10px; }
+.sport-neck { width: 50px; height: 20px; background: rgba(255,255,255,0.2); z-index: 2;}
+.sport-body { @extend .glass-body; width: 100px; height: 220px; border-radius: 50px 50px 20px 20px; clip-path: polygon(0% 0%, 100% 0%, 90% 40%, 100% 100%, 0% 100%, 10% 40%); padding-top:20px;}
+.sport-label { background: transparent; color: #00ffcc; font-size: 1.2rem; font-weight: 900; writing-mode: vertical-rl; text-orientation: upright; z-index:4; font-family:var(--font-heading); text-shadow: 0 0 10px rgba(0, 255, 204, 0.5);}
+
+/* 4. الزجاجة العائلية (طويلة وعريضة ومضلعة) */
+.family-bottle { transform: scale(1.3) scaleX(1.4) translateY(-15px); }
+.family-cap { width: 40px; height: 25px; background: #0066ff; border-radius: 5px; z-index: 3;}
+.family-neck { width: 45px; height: 30px; background: rgba(255,255,255,0.1); border-left: 2px solid #fff; border-right: 2px solid #fff; z-index: 2;}
+.family-body { @extend .glass-body; width: 110px; height: 250px; border-radius: 20px; display:flex; flex-direction:column; justify-content:space-evenly; align-items:center;}
+/* أضلاع بلاستيكية لتقوية العبوة */
+.family-ribs { width: 100%; height: 5px; background: rgba(255,255,255,0.3); z-index: 2; box-shadow: 0 5px 10px rgba(0,0,0,0.5);}
+.family-label { padding: 15px; background: rgba(255,255,255,0.9); color: #001838; font-weight: 900; z-index: 4; text-align:center; font-family:var(--font-heading); width: 100%; border-radius: 10px;}
+
+/* دمج خصائص الزجاج المشتركة يدويا لأن extend غير مدعوم في pure CSS */
+.hero-body, .pocket-body, .sport-body, .family-body {
+    background: linear-gradient(90deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.15) 20%, rgba(138, 221, 255, 0.1) 80%, rgba(255,255,255,0.02) 100%);
+    backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
+    border: 2px solid rgba(138, 221, 255, 0.5); border-top: none;
+    box-shadow: inset 15px 0 30px rgba(255,255,255,0.3), inset -15px 0 30px rgba(138, 221, 255, 0.3);
+    overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1;
+}
+.hero-body::before, .pocket-body::before, .sport-body::before, .family-body::before { 
+    content: ''; position: absolute; bottom: -5%; left: -30%; width: 160%; height: 95%; 
+    background: linear-gradient(0deg, rgba(0, 119, 255, 0.4), transparent); 
+    transform-origin: bottom center;
+    transform: rotate(var(--water-slosh-angle, 0deg)) translateY(var(--water-slosh-y, 0px));
+}
+.hero-body::after, .pocket-body::after, .sport-body::after, .family-body::after { content: ''; position: absolute; top: 10px; left: 15%; width: 10%; height: 90%; background: linear-gradient(to bottom, rgba(255,255,255,0.8), transparent); filter: blur(3px); opacity: 0.7; }
+
+/* قطرات الماء */
+.glass-bubble {
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.02) 60%, rgba(138, 221, 255, 0.15) 100%);
+    box-shadow: inset 5px 5px 15px rgba(255, 255, 255, 0.6), inset -5px -5px 15px rgba(0, 102, 255, 0.4), 0 15px 30px rgba(0, 0, 0, 0.7), 0 0 20px rgba(138, 221, 255, 0.2);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 10; opacity: 0.95;
+}
+.glass-bubble::after { content: ''; position: absolute; top: 15%; left: 20%; width: 25%; height: 25%; background: rgba(255, 255, 255, 0.9); border-radius: 50%; filter: blur(2px); transform: rotate(-45deg); }
+.drop-1 { top: 15%; left: -10%; width: 35px; height: 35px; }
+.drop-2 { top: 85%; left: 90%; width: 60px; height: 60px; backdrop-filter: blur(15px); } 
+.drop-3 { top: 40%; left: 110%; width: 25px; height: 25px; }
+.drop-4 { top: 90%; left: 10%; width: 45px; height: 45px; }
+
+/* قسم المنتجات (إصدارات باريس) */
+.products-section { padding: var(--section-padding); background: linear-gradient(to bottom, #00030a, #010815); }
+.section-header { text-align: center; margin-bottom: 90px; }
+.section-title { font-size: 3rem; color: var(--clr-white); margin-bottom: 15px; font-weight: 700; }
+.section-desc { color: var(--clr-primary); font-size: 1.4rem; font-weight: 300; }
+
+.products-grid { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 50px; max-width: 1200px; margin: 0 auto; }
+.product-card {
+    background: var(--glass-bg); border: 1px solid var(--glass-border);
+    border-radius: 25px; padding: 50px 30px; width: 320px;
+    text-align: center; position: relative; backdrop-filter: var(--glass-blur);
+    box-shadow: var(--glass-shadow); transform-style: preserve-3d; transition: var(--trans-smooth);
+}
+.product-card:hover { border-color: rgba(138, 221, 255, 0.4); box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7), 0 0 30px rgba(138, 221, 255, 0.15); }
+.card-glow { position: absolute; top: 50%; left: 50%; width: 150px; height: 150px; background: rgba(138, 221, 255, 0.15); transform: translate(-50%, -50%); filter: blur(50px); border-radius: 50%; opacity: 0; transition: var(--trans-smooth); pointer-events: none; z-index:0;}
+.product-card:hover .card-glow { opacity: 1; }
+.product-img-wrapper { height: 260px; display: flex; justify-content: center; align-items: flex-end; margin-bottom: 35px; transform: translateZ(50px); position:relative; z-index:2;}
+.product-card:hover .css-bottle { transform: scale(1) translateY(-15px) rotate(3deg); filter: drop-shadow(0 30px 30px rgba(0,0,0,0.9)) drop-shadow(0 0 30px rgba(138, 221, 255, 0.3));}
+
+.product-info { transform: translateZ(40px); position:relative; z-index:2;}
+.product-info h3 { font-size: 1.6rem; margin-bottom: 10px; color: var(--clr-primary); font-weight: 800; letter-spacing: 1px;}
+.product-info .size { color: var(--clr-white); font-size: 1.1rem; opacity: 0.8;}
+.product-card.featured { width: 350px; border-color: rgba(138, 221, 255, 0.3); background: rgba(255, 255, 255, 0.03); transform: scale(1.05); }
+.product-card.featured .card-glow { background: rgba(0, 255, 204, 0.15); }
+.product-card.featured .product-info h3 { color: #00ffcc;}
+.badge { position: absolute; top: 25px; left: -10px; background: #00ffcc; color: #00030a; padding: 8px 20px; font-size: 0.95rem; font-weight: 800; font-family: var(--font-heading); box-shadow: 0 10px 20px rgba(0,255,204,0.3); transform: translateZ(60px); }
+.badge::after { content: ''; position: absolute; top: 100%; left: 0; border-top: 10px solid #00b38f; border-left: 10px solid transparent; }
+
+/* قسم رحلتنا */
+.about-section { padding: var(--section-padding); background: #00030a; border-top: 1px solid rgba(255,255,255,0.02); }
+.about-container { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; gap: 80px; }
+.about-text { flex: 1; }
+.about-text p { color: var(--clr-text-light); margin-bottom: 25px; font-size: 1.15rem; line-height: 1.9;}
+.about-visual { flex: 1; display: flex; justify-content: center; }
+
+.floating-water-card { width: 380px; height: 480px; background: linear-gradient(135deg, rgba(255,255,255,0.03), rgba(0,0,0,0.5)); border: 1px solid var(--glass-border); border-radius: 30px; backdrop-filter: var(--glass-blur); box-shadow: 0 30px 60px rgba(0,0,0,0.8); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; transform-style: preserve-3d; }
+.card-content { text-align: center; padding: 40px; transform: translateZ(80px); }
+.card-icon { font-size: 5rem; color: var(--clr-primary); margin-bottom: 30px; filter: drop-shadow(0 0 20px rgba(138, 221, 255, 0.4));}
+.card-content h4 { font-size: 2rem; margin-bottom: 15px; font-weight: 700;}
+.card-bg-glow { position: absolute; bottom: -30%; right: -30%; width: 160%; height: 160%; background: radial-gradient(circle, rgba(138, 221, 255, 0.1) 0%, transparent 60%); pointer-events: none; }
+
+/* قسم المياه التفاعلية */
+.interactive-water-section { padding: var(--section-padding); background: #010815; text-align: center; }
+.water-glass-panel { max-width: 1000px; margin: 0 auto; padding: 100px 40px; border-radius: 40px; background: rgba(255,255,255,0.01); border: 1px solid var(--glass-border); box-shadow: 0 40px 100px rgba(0,0,0,0.6); position: relative; overflow: hidden; backdrop-filter: blur(10px);}
+.water-glass-panel h2 { font-size: 3rem; color: var(--clr-primary); margin-bottom: 15px; position:relative; z-index:2; font-weight:800;}
+.water-glass-panel p { color: var(--clr-text-light); font-size: 1.3rem; position:relative; z-index:2;}
+.wave-simulation-box { position: absolute; top: 0; left: 0; width: 100%; height: 100%; opacity: 0.6; z-index: 1; pointer-events: auto; }
+
+/* التواصل */
+.contact-section { padding: var(--section-padding); background: radial-gradient(circle at bottom left, #01122a 0%, #00030a 70%); }
+.contact-container { display: flex; flex-wrap: wrap; gap: 60px; max-width: 1200px; margin: 0 auto; }
+.contact-info, .contact-form-wrapper { flex: 1; min-width: 300px; }
+.contact-title { font-size: 3rem; color: var(--clr-white); margin-bottom: 20px; font-weight: 800;}
+.contact-info p { color: var(--clr-primary); margin-bottom: 40px; font-size: 1.2rem; }
+.detail-item { display: flex; align-items: center; gap: 20px; font-size: 1.15rem; margin-bottom: 30px; }
+.detail-item i { font-size: 1.8rem; color: var(--clr-white); width: 60px; height: 60px; background: rgba(255,255,255,0.05); border-radius: 50%; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(5px);}
+
+.contact-form-wrapper { padding: 50px; background: rgba(255,255,255,0.01); border: 1px solid rgba(255,255,255,0.05); border-radius: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.5);}
+.glass-form { display: flex; flex-direction: column; gap: 30px; }
+.input-group { position: relative; }
+.input-group input, .input-group textarea { width: 100%; padding: 15px 40px 15px 15px; background: transparent; border: none; border-bottom: 2px solid rgba(255,255,255,0.1); color: var(--clr-white); font-family: var(--font-body); font-size: 1.1rem; outline: none; transition: 0.3s; }
+.input-group label { position: absolute; top: 15px; right: 40px; color: var(--clr-text-light); transition: 0.3s; pointer-events: none; }
+.input-group input:focus + label, .input-group input:not(:placeholder-shown) + label,
+.input-group textarea:focus + label, .input-group textarea:not(:placeholder-shown) + label { top: -15px; right: 0; font-size: 0.85rem; color: var(--clr-primary); }
+
+/* الفوتر */
+.footer { padding: 90px 5% 30px; background: #000103; border-top: 1px solid rgba(138, 221, 255, 0.05); }
+.footer-content { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 50px; max-width: 1200px; margin: 0 auto; border-bottom: 1px solid rgba(138, 221, 255, 0.05); padding-bottom: 60px; }
+.footer-logo { flex: 1; min-width: 250px; }
+.footer-logo .logo-text { font-size: 2.2rem; font-family: var(--font-heading); font-weight: 900;}
+.footer-desc { color: var(--clr-text-light); margin-top: 20px; font-size: 1.15rem; line-height: 1.8;}
+.footer-links, .footer-social { display: flex; flex-direction: column; gap: 15px; position:relative; }
+.footer h3 { color: var(--clr-white); font-size: 1.4rem; margin-bottom: 20px; font-weight: 700; }
+.footer a { color: var(--clr-text-light); text-decoration: none; transition: 0.3s; font-size: 1.1rem;}
+.footer a:hover { color: var(--clr-primary); padding-right: 15px; }
+
+/* شاشة التحميل بقطرة الماء المذهلة (Water Loader) */
+.water-loader { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #00030a; z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 1s ease-out, visibility 1s ease-out; }
+.loader-drop-container { position: relative; width: 200px; height: 150px; display: flex; align-items: center; justify-content: center; }
+.falling-drop { position: absolute; top: -150px; width: 30px; height: 30px; background: rgba(138, 221, 255, 0.8); border-radius: 0 50% 50% 50%; transform: rotate(45deg); box-shadow: inset 5px 5px 10px rgba(255,255,255,0.8), 0 0 20px var(--clr-primary); animation: dropFall 2s cubic-bezier(0.5, 0, 1, 0.5) infinite; }
+@keyframes dropFall { 0% { top: -150px; opacity: 1; transform: rotate(45deg) scale(0.8); } 50% { top: 50%; opacity: 1; transform: rotate(45deg) scale(1.1); } 51% { opacity: 0; } 100% { opacity: 0; } }
+.loader-ripple { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 0; height: 0; border: 3px solid var(--clr-primary); border-radius: 50%; opacity: 0; animation: rippleExpand 2s ease-out infinite; animation-delay: 1s; }
+@keyframes rippleExpand { 0% { width: 0px; height: 0px; opacity: 1; border-width: 5px; } 100% { width: 400px; height: 400px; opacity: 0; border-width: 0px; } }
+.loader-text { color: var(--clr-white); font-family: var(--font-heading); font-size: 2rem; margin-top: 20px; font-weight: 800; letter-spacing: 2px; animation: pulseSoft 2s infinite alternate ease-in-out; }
+.water-loader.hidden { opacity: 0; visibility: hidden; }
+
+/* تأثيرات عامة للزهور */
+.reveal { opacity: 0; transform: translateY(40px); transition: 1s cubic-bezier(0.1, 1, 0.2, 1); }
+.reveal.active { opacity: 1; transform: translateY(0); }
+.animate-pulse-soft { animation: pulseSoft 3s infinite alternate ease-in-out; }
+@keyframes pulseSoft { 0%{transform:scale(1);} 100%{transform:scale(1.05); filter:drop-shadow(0 0 30px rgba(138, 221, 255, 0.8));} }
+
+@media (max-width: 992px) {
+    .hero { flex-direction: column; justify-content: center; text-align: center; padding-top: 150px; }
+    .bottle-showcase-wrapper { position: relative; top: 0; left: 0; transform: none; width: 300px; height: 400px; margin: 30px auto 0; perspective: 1000px; }
+    .about-container { flex-direction: column; text-align: center; }
+    .product-card.featured { transform: scale(1); }
+}
