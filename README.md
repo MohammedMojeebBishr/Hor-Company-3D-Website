@@ -1,56 +1,65 @@
 # 💧 3D Water Store Website
 
-موقع تعريفي لمتجر بيع المياه بتقنية عرض ثلاثي الأبعاد (3D) بتصميم عصري وتجربة تفاعلية جذابة.
+A modern promotional website for a water products store, featuring interactive 3D product visualization and an engaging user experience.
 
 ---
 
-## 📌 نبذة عن المشروع
-هذا المشروع عبارة عن **موقع تعريفي لمتجر مياه** تم تصميمه وبرمجته لعرض المنتجات باستخدام تقنيات **3D** لتقديم تجربة مستخدم حديثة ومميزة.
+## 📌 Project Overview
 
-يهدف الموقع إلى:
-- عرض منتجات المياه بشكل ثلاثي الأبعاد
-- تقديم تجربة تفاعلية جذابة
-- إبراز جودة المنتجات بطريقة احترافية
-- تصميم متجاوب مع جميع الأجهزة
+This project is a **3D Water Store Website** designed and developed to showcase water products using interactive 3D technology. The website provides a modern and immersive experience that highlights products in a visually appealing and professional way.
 
----
+The website aims to:
 
-## 💻 التقنيات المستخدمة
-- HTML
-- CSS
-- JavaScript
-- Three.js (لعرض العناصر ثلاثية الأبعاد)
+* Showcase water products through interactive 3D visualization
+* Deliver an engaging and immersive user experience
+* Highlight product quality with modern presentation techniques
+* Provide a fully responsive design across all devices
 
 ---
 
-## 🎨 المميزات
-- تصميم عصري وحديث
-- عرض المنتجات بتقنية 3D
-- تجربة تفاعلية للمستخدم
-- واجهة سهلة الاستخدام
-- متوافق مع الجوال والكمبيوتر
-- أداء سلس وسريع
+## 💻 Technologies Used
+
+* HTML
+* CSS
+* JavaScript
+* Three.js
 
 ---
 
-## 🧴 أنواع المنتجات
-- مياه معدنية
-- مياه صحية
-- عبوات مياه مختلفة الأحجام
-- عروض وخصومات
+## 🎨 Key Features
+
+* Modern and visually appealing design
+* Interactive 3D product visualization
+* Engaging user experience
+* User-friendly interface
+* Fully responsive for mobile and desktop devices
+* Smooth and optimized performance
 
 ---
 
-## 👨‍💻 البرمجة والتصميم
-**محمد مجيب بشر**
+## 🧴 Product Categories
+
+* Mineral Water
+* Purified Drinking Water
+* Various Bottle Sizes
+* Promotional Offers & Discounts
 
 ---
 
-## 📞 التواصل
-- 967+ 772062777
-- 967+ 782807337
+## 👨‍💻 Design & Development
+
+**Mohammed Mujeeb Bishr**
 
 ---
 
-## 🚀 ملاحظات
-قم بالنقر مرتين على ملف index.html لتشغيل المشروع.
+## 📞 Contact Information
+
+* +967 772062777
+* +967 782807337
+
+---
+
+## 🚀 Notes
+
+Double-click the **index.html** file to run the project locally.
+
